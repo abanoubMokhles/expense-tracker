@@ -1,5 +1,4 @@
-import ExpenseItem from "./Components/ExpenseItem/ExpenseItem";
-
+import Expenses from "./Components/Expenses/Expenses";
 function App() {
   const expenses = [
     {
@@ -23,13 +22,7 @@ function App() {
     },
   ];
 
-  return (
-    <div>
-      {expenses.map((expense) => {
-        return <ExpenseItem expenseData={expense} />;
-      })}
-    </div>
-  );
+  return <Expenses expenses={expenses} />;
 }
 
 export default App;

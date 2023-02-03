@@ -1,18 +1,16 @@
 import React from "react";
+import ExpenseDate from "../ExpenseDate/ExpenseDate";
 import "./ExpenseItem.css";
-
+import Card from "../Card/Card";
 function ExpenseItem({ expenseData }) {
-  console.log(expenseData);
   return (
-    <div className="expense-item">
-      <div className="expense-item__date">
-        {expenseData.date.toLocaleDateString()}
-      </div>
+    <Card className="expense-item">
+      <ExpenseDate date={expenseData.date} />
       <div className="expense-item__description">
         <h2>{expenseData.title}</h2>
-        <div className="expense-item__price">{expenseData.amount}</div>
+        <div className="expense-item__price">$ {expenseData.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 
