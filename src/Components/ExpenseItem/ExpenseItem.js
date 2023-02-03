@@ -1,15 +1,19 @@
-import ExpenseDate from "../ExpenseDate/ExpenseDate";
+import React from "react";
 import "./ExpenseItem.css";
-import Card from "../Card/Card";
 
-export default function ExpenseItem({ expense }) {
+function ExpenseItem({ expenseData }) {
+  console.log(expenseData);
   return (
-    <Card className="expense-item">
-      <ExpenseDate expense={expense} />
-      <div className="expense-item__description ">
-        <h2>{expense.title}</h2>
-        <p className="expense-item__price">${expense.amount}</p>
+    <div className="expense-item">
+      <div className="expense-item__date">
+        {expenseData.date.toLocaleDateString()}
       </div>
-    </Card>
+      <div className="expense-item__description">
+        <h2>{expenseData.title}</h2>
+        <div className="expense-item__price">{expenseData.amount}</div>
+      </div>
+    </div>
   );
 }
+
+export default ExpenseItem;
