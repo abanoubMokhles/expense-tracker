@@ -3,6 +3,7 @@ import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import "./Expenses.css";
 import Card from "../Card/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
+import ExpensesList from "../ExpensesList/ExpensesList";
 
 const Expenses = ({ expenses }) => {
   const [filterYear, setFilterYear] = useState("2021");
@@ -17,13 +18,7 @@ const Expenses = ({ expenses }) => {
   return (
     <Card className="expenses">
       <ExpenseFilter onYearChange={yearChangeHandler} />
-      {filteredList.length === 0 && (
-        <p className="expenses-not-found">No Expenses was found</p>
-      )}
-      {filteredList.length > 0 &&
-        filteredList.map((expense) => {
-          return <ExpenseItem key={expense.id} expenseData={expense} />;
-        })}
+      <ExpensesList list={filteredList} />
     </Card>
   );
 };
