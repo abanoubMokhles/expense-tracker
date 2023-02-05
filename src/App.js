@@ -7,7 +7,7 @@ const App = () => {
       id: "e1",
       title: "Toilet Paper",
       amount: 94.12,
-      date: new Date(2023, 2, 14),
+      date: new Date(2024, 2, 14),
     },
     { id: "e24", title: "New TV", amount: 799.49, date: new Date(2021, 5, 12) },
     {
